@@ -1,0 +1,214 @@
+body {
+  background-color: #2c2c2c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#undangan1 {
+  display: none;
+}
+
+.borderundangan {
+ 
+  position: relative;
+  width: 400px; /* Sama seperti .TheWeddingOf */
+  margin: 0 auto; /* Supaya tetap di tengah layar */
+}
+
+
+.TheWeddingOf {
+  margin: auto;
+  background-image: url(bahan/bgfinal.jpg);
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  height: 700px;
+  width: 400px;
+  border-radius: 10px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 18px;
+  transform: translateX(-50%);
+  width: 400px; /* Samakan dengan .TheWeddingOf */
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+  border-radius: 10px; /* Opsional */
+}
+
+
+
+
+.nav-item,
+.a {
+  
+  font-family: Arial, Helvetica, sans-serif;
+  flex-grow: 1;
+  text-align: center;
+  color: #9c9d9c;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.nav-item,
+.a:hover {
+  color: #3b3b3b;
+  transform: scale(1.1);
+}
+
+.nav-item i {
+  
+  display: block;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.nav-label {
+  
+  border-radius: 8px;
+  padding: 0px 10px;
+}
+
+.nav-label {
+  margin-top: 5px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s, transform 0.3s;
+  color: #ffffff;
+  pointer-events: none;
+}
+
+/* Magic Happens Here */
+.nav-item:hover .nav-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* .bottom-nav {
+  animation: slideIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+} */
+
+.bottom-nav,
+.fotohome {
+  opacity: 0;
+  transform: translateY(50px); /* Mulai dari bawah */
+  animation: naikDariBawah 0.9s ease-out forwards;
+}
+
+@keyframes naikDariBawah {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fotohome {
+  margin-top: 100px;
+  margin-left: 100px;
+  width: 50%; /* Atur lebarnya sesuai parent-nya */
+  max-width: 200px; /* Maksimal 400px */
+  height: auto; /* Biar proporsinya tetap terjaga */
+  border-radius: 100%; /* Opsional: sudut membulat */
+  border: 3px solid #ffffff; /* garis putus-putus biru */
+  box-shadow: 4px 4px 15px rgba(5, 51, 151, 0.477);
+}
+
+.fotohome {
+  animation: denyut 1.5s infinite;
+}
+
+/* Keyframes untuk efek denyut */
+@keyframes denyut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.a {
+  text-decoration: none;
+}
+
+.texthome {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* tengah secara vertikal */
+  align-items: center; /* tengah secara horizontal */
+  height: 100vh; /* biar div-nya setinggi layar */
+  text-align: center; /* teks dalam elemen juga rata tengah */
+}
+
+.texthome {
+  opacity: 0;
+  transform: translateY(50px); /* Mulai dari bawah */
+  animation: naikDariBawah 0.9s ease-out forwards;
+}
+
+.pengantin {
+  margin-top: 15px;
+  background-image: url(bahan/finalbunga.jpg);
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  height: 700px;
+  width: 400px;
+  border-radius: 10px;
+}
+
+
+.textpasangan {
+  
+}
+
+.pengantin h1 {
+  font-size: 30px;
+  text-align: center;
+  padding: 30px 0px;        /* ruang di dalam */
+  background-color: #202020;
+  border-radius: 30px;
+  /* background: transparent;
+  border: 1px solid rgba(255, 255, 255, .5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px); */
+}
+
+.textpasangan {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.9s ease-out;
+}
+
+.textpasangan.aktif {
+  opacity: 1;
+  transform: translateY(0);
+}

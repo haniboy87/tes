@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Pernikahan</title>
+    <link rel="stylesheet" href="cover.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- simplyCountdown -->
+    <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css" />
+    <script src="countdown/simplyCountdown.min.js"></script>
+  </head>
+  <body>
+    <div class="border" id="cover">
+      <!-- Foto di atas -->
+      <div class="gambar">
+        <img
+          src="bahan/f4a60c8764bcacd985356220a84bc597-removebg-preview.png"
+          alt="Foto Undangan"
+        />
+      </div>
+
+      <!-- Form input Nama -->
+      <div class="bungkus" id="formNama">
+        <div style="margin-top: 20px">
+          <input
+            type="text"
+            id="namaTamu"
+            placeholder="Masukkan namamu"
+            class="Masukkan"
+          />
+          <button id="btnBuka" class="buka">Kirim</button>
+        </div>
+      </div>
+      <!-- Bagian undangan (tersembunyi awalnya) -->
+      <div id="undangan" class="text">
+        <h2>Undangan Pernikahan</h2>
+        <p>Halo, <span id="namaTampil"></span>!</p>
+        <p>
+          Kami mengundangmu ke pernikahan kami, dan <br />kehadiran
+          <span id="namaTampil2"></span> suatu kehormatan dan kebahagiaan <br />
+          bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan
+          doa restu.
+        </p>
+        <h3>Ferdy &amp; Anisa</h3>
+        <p>19 Juni 2025 – Weddings</p>
+        <p>
+          <button onclick="mulaiAudio()" class="lihat" id="lihatundangan">
+            Lihat Undangan
+          </button>
+        </p>
+      </div>
+    </div>
+    
+    <div class="borderundangan" id="undangan1">
+      <div class="bottom-nav">
+        <div class="nav-item">
+          <span class="nav-label"> Beranda </span>
+          <a href="#home" class="a">
+            <i class="fas fa-home"></i>
+          </a>
+        </div>
+        <div class="nav-item">
+          <span class="nav-label"> Cerita </span>
+          <a href="#home" class="a">
+            <i class="fas fa-heart"></i>
+          </a>
+        </div>
+        <div class="nav-item">
+          <span class="nav-label"> Galeri </span>
+          <a href="#home" class="a">
+            <i class="fas fa-image"></i>
+          </a>
+        </div>
+        <div class="nav-item">
+          <span class="nav-label"> Acara </span>
+          <a href="#home" class="a">
+            <i class="fas fa-calendar"></i>
+          </a>
+        </div>
+        <div class="nav-item">
+          <span class="nav-label"> Ucapan </span>
+          <a href="#home" class="a">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        <div class="nav-item">
+          <span class="nav-label"> RSVP </span>
+          <a href="#home" class="a">
+            <i class="fas fa-user-friends"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="TheWeddingOf" id="home">
+        <!-- <audio id="musik" src="bahan/SpotiDownloader.com - Wedding Nasheed - Muffled - Nasheed Harmony.mp3" loop></audio> -->
+        <div>
+          <img
+            src="bahan/01eb2738952ea0d643b45b5622242152.jpg"
+            alt=""
+            class="fotohome"
+          />
+        </div>
+        <div class="texthome">
+          <h1>Perdy & Anisa</h1>
+          <p>
+            Kami akan menikah, dan kami ingin Anda menjadi bagian dari
+            hariistimewa kami!
+          </p>
+          <p style="font-weight: bold">Kamis, Juni 19 2025</p>
+          <div class="simply-countdown"></div>
+        </div>
+      </div>
+
+      <div class="pengantin" id="pasangan">
+        <div class="textpasangan">
+          <h1>Pengantin Pria dan Wanita</h1>
+        </div>
+        <div class="textpasangan">
+          <p>Assalamu`alaikum Warahmatullaahi Wabarakaatuh</p>
+          <br><p>Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. 
+            Ya Allah semoga ridho-Mu tercurah mengiringi pernikahan kami</p>
+        </div>
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="cover.js"></script>
+
+    <script>
+      simplyCountdown(".simply-countdown", {
+        year: 2025, // required
+        month: 6, // required
+        day: 19, // required
+        hours: 8, // Default is 0 [0-23] integer
+        words: {
+          //words displayed into the countdown
+          days: { singular: "day", plural: "days" },
+          hours: { singular: "hour", plural: "hours" },
+          minutes: { singular: "minute", plural: "minutes" },
+          seconds: { singular: "second", plural: "seconds" },
+        },
+      });
+    </script>
+
+    <script>
+  const elemenAnimasi = document.querySelectorAll('.textpasangan');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('aktif');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  elemenAnimasi.forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
+  </body>
+</html>
